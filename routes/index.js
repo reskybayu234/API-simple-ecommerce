@@ -25,9 +25,11 @@ router.put('/api/item/:id', itemController.edit);
 router.delete('/api/item/:id', itemController.lenyap);
 
 // ORDER
-router.get('/api/order/:id', orderController.list);
+router.get('/api/order', orderController.list);
 router.post('/api/order', orderController.add);
 // router.get('/api/order/:id', orderController.getById);
+router.put("/api/order/:id", orderController.edit);
+router.delete('/api/order/:id', orderController.lenyap);
 
 
 module.exports = router; 
