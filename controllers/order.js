@@ -73,8 +73,12 @@ module.exports = {
             }
         )
         return Order.update({
-            
-        })
+            total_harga : total_harga,
+            umlah_order_barang : jumlah_order_barang,
+            id_user : req.body.id_user,
+            id_item : req.body.id_item
+        }).then(order => res.status(201).json(order))
+        .catch(err => res.status(400).json(err));
     },
 
 
