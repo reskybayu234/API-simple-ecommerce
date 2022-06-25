@@ -24,7 +24,9 @@ module.exports = (sequelize, DataTypes) => {
   Item.associate = function(models){
     Item.hasMany(models.Order, {
       foreignKey : 'id_item',
-      as : 'item'
+      as : 'item',
+      onDelete: 'CASCADE',
+      hooks: true, 
     })
   }
   return Item;
